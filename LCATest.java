@@ -23,4 +23,15 @@ public class LCATest {
 
  	}
 	
-	
+	@Test
+	public void testSize(){
+		LCA<Integer, Integer> test = new LCA<Integer, Integer>();
+		assertEquals(test.size(), 0);
+		test.put(4, 1);
+		assertEquals(test.size(), 1);
+		test.put(2, 4);
+		test.put(3, 6);
+		assertEquals(test.size(), 3);
+		test.put(4, 8);
+		assertEquals(test.size(), 3); //Size remains same as element already exists
+	}
